@@ -1,16 +1,62 @@
-function setdarkmode(enabled) {
-  document.body.classList.toggle("darkmode", enabled);
-  localStorage.setItem("darkmode", enabled ? "enabled" : "disabled");
+function getSavedTheme() {
+  try {
+    return localStorage.getItem("theme");
+  } catch (e) {
+    return null;
+  }
+}
 
-  document.querySelector(".darkbutton .material-symbols-outlined").textContent = enabled ? "toggle_on" : "toggle_off";
+function applyTheme(theme, save = false) {
+  const root = document.documentElement;
+  const isDark = theme === "dark";
+
+  root.classList.toggle("darkmode", isDark);
+  root.style.colorScheme = theme;
+  
+  if (save) {
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+  }
+  updatethemebutton();
+}
+
+function updatethemebutton() {
+  const isDark = document.documentElement.classList.contains("darkmode");
+
+  const icon = document.querySelector(
+    ".darkbutton .material-symbols-outlined"
+  );
+
+  if (icon) {
+    icon.textContent = isDark ? "toggle_on" : "toggle_off"
+  }
+
+  const button = document.querySelector(".darkbutton");
+
+  if (button) {
+    button.setAttribute("aria-pressed", String(isDark));
+  }
 }
 
 function darkmode() {
-  setdarkmode(!document.body.classList.contains("darkmode"))
+  const isDark = document.documentElement.classList.contains("darkmode");
+
+  applyTheme(isDark ? "light" : "dark", true);
 }
 
-function loaddarkmode() {
-  setdarkmode(localStorage.getItem("darkmode") === "enabled")
-}
+const systemPreference = window.matchMedia(
+  "(prefers-color-scheme: dark)"
+);
 
-window.addEventListener("DOMContentLoaded", loaddarkmode)
+systemPreference.addEventListener("change", (event) => {
+  const saved = getSavedTheme();
+
+  if (saved !== "dark" && saved !=="light") {
+    applyTheme(event.matches ? "dark" : "light");
+  }
+});
+
+updatethemebutton();
+
+window.darkmode = darkmode;

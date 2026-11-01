@@ -10,18 +10,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="prefetch" href="/about/">
-  <link rel="prefetch" href="/blog/">
-  <link rel="prefetch" href="/contact/">
+  <link rel="prefetch" href="/about">
+  <link rel="prefetch" href="/blog">
+  <link rel="prefetch" href="/contact">
 
-  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet">
+  <script src="/themescript.js"></script>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <div class="topright">
-<button class="darkbutton" onclick="darkmode()" aria-label="dark mode">
-      <span class="material-symbols-outlined">toggle_on</span>
+<button class="darkbutton" aria-label="switch colour theme" aria-pressed="false" onclick="darkmode()">
+      <span class="material-symbols-outlined">toggle_off</span>
       <span class="buttonlabel">dark mode</span></button>
 
 </div>
@@ -33,15 +34,16 @@
 <nav aria-label="Primary">
   <ul>
     <li><a href="/" aria-current="page">Home</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
 </nav>
 </div>
 <div class="frame">
 <img class="home-photo" fetchpriority="high" src="images/traininjapan.jpg" alt="Japanvibes">
 </div>
-<script src="./script.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>

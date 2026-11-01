@@ -1,0 +1,355 @@
+body {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1em;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #fff;
+  background-image:
+   linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+   linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-repeat: repeat;
+}
+body.oxidepage {
+  min-height: 200vh;
+}
+
+html {
+  color-scheme: light;
+  background-color: #fff;
+}
+
+html.darkmode {
+  background-color: #121212;
+  color-scheme: dark;
+}
+
+html.darkmode body {
+  background-color: #121212;
+  background-image:
+  linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+html.darkmode h1,
+html.darkmode .darkbutton,
+html.darkmode .title,
+html.darkmode ul li a {
+  color: white;
+}
+
+.darkbutton {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.darkbutton {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.darkbutton .material-symbols-outlined {
+  font-size: 3em;
+  color: inherit;
+}
+
+.topright {
+  position: absolute;
+  top: 3rem;
+  right: clamp(19rem, 12vw, 20rem);
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+  text-decoration: none;
+  color: black;
+}
+
+.title {
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.home-photo {
+  display: block;
+  width: min(300px, calc(100vw - 2rem));
+  height: auto;
+  object-fit: cover;
+}
+
+.doublephoto .pcbphoto {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.doublephoto .frame2 {
+  flex: 0 1 300px;
+  width: 100%;
+  display: block;
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 3px solid #222;
+  border-radius: 3px !important;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.doublephoto {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: min(700px, calc(100% - 2rem));
+  margin: 5rem auto 2rem;
+}
+
+.project-page {
+  width: min(900px, calc(100% - 2rem));
+  margin: 4rem auto;
+  padding: 0;
+}
+
+.project-info {
+  width: min(90ch, calc(100% - 2rem));
+}
+
+.projectdesc {
+  line-height: 1.7;
+}
+
+.projectmeta {
+  display:flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+
+.projectmeta span {
+  display: inline-block;
+  border: 1px solid #777;
+  border-radius: 4px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.8rem;
+}
+
+.projectgallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.projectcard {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.projectcard a {
+  display: block;
+}
+
+.projectcard img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f7f7f7;
+}
+
+.projectcard figcaption {
+  padding: 0.7rem 0.85rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.85rem;
+}
+
+html.darkmode .projectcard {
+  background: #1c1c1c;
+  border-color: #666;
+}
+
+html.darkmode .projectcard img {
+  background: #242424;
+}
+
+html.darkmode .projectcard figcaption {
+  border-color: #444;
+}
+
+.project-info h2 {
+  margin: 1rem 0 0.5rem;
+}
+
+.frame {
+  display: block;
+  margin: 5rem auto 2rem;
+  width: fit-content;
+  max-width: calc(100% - 2rem);
+  padding: 0;
+  border: 3px solid #222;
+  border-radius: 3px !important;
+  line-height: 0;
+}
+
+.abouttext, .project-page, .bruh, .space {
+  width: min(90ch, calc(100% - 2rem));
+  margin: 1rem auto;
+  margin-top: 4em;
+  padding: 0 1.25rem;
+  text-align: left;
+  line-height: 1.6;
+}
+
+
+nav a[aria-current="page"] {
+  color: #2674c8;
+  font-weight: 700;
+}
+
+.navframe {
+  padding-top: 5em;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  float: none;
+}
+
+.image-frame img {
+  display: block;
+}
+
+.project-index {
+  width: min(700px, calc(100% - 2rem));
+  margin: 5rem auto;
+}
+
+.project-index h2 {
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 45px 1fr 100px 20px;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+html.darkmode .project-row {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-number {
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+.project-name {
+  font-size: 14px;
+}
+
+.project-arrow {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.project-row:hover .project-arrow {
+  opacity 0.8;
+}
+
+.project-row:hover .project-name {
+  text-decoration: underline;
+}
+
+.project-desc {
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+.projectmeta {
+  display: flex;
+  gap: 10px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.projectmeta span {
+  border: 1px solid var(--border);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .frame {
+    display: block;
+    width: fit-content;
+    max-width: calc(100% - 2rem);
+    margin: 2rem auto;
+  }
+
+  .home-photo {
+    width: min(300px,calc(100vw - 2rem));
+    margin-left: 0;
+  }
+
+  .abouttext,
+  .space {
+    width: calc(100% - 2rem);
+    padding: 0;
+  }
+  
+  .project-row {
+    grid-template-columns: 30px 1fr 65px 15px
+  }
+
+  .project-index {
+    margin-top: 3rem;
+  }
+}
