@@ -353,3 +353,11 @@ html.darkmode .project-row {
     margin-top: 3rem;
   }
 }
+
+/* homepage intro */
+.home-intro {
+  max-width: 42rem;
+  margin: 1.5rem auto 0;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
